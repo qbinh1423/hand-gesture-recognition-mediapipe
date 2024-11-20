@@ -13,7 +13,7 @@ from utils import CvFpsCalc
 from model import KeyPointClassifier
 from model import PointHistoryClassifier
 
-# Sử dụng argparse để nhận các tham số đầu
+# Use argparse to get the first parameters
 def get_args():
     parser = argparse.ArgumentParser()
 
