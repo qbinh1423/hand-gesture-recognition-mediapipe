@@ -10,12 +10,14 @@ class KeyPointClassifier(object):
         num_threads=1,
     ):
         self.interpreter = tf.lite.Interpreter(model_path=model_path,
-                                               num_threads=num_threads)
+                                               num_threads=num_threads) # Load model
 
+    # Tensor index, shape, data type (dtype) of I and O tensors.
         self.interpreter.allocate_tensors()
         self.input_details = self.interpreter.get_input_details()
         self.output_details = self.interpreter.get_output_details()
 
+    # Returns the index of the predicted output class.
     def __call__(
         self,
         landmark_list,
